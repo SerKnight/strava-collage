@@ -48,6 +48,7 @@ class ApplicationController < ActionController::Base
       @photos << get_activities_with_photos(activity_id)
     end
 
+
     # @activities = @ca.activities
     # https://www.strava.com/api/v3/activities/:id/photos?photo_sources=true
   end

@@ -25,9 +25,22 @@ module ApplicationHelper
     parsed = JSON.parse(response.body)
     activities = []
     parsed.each do |p|
-      activities << [ caption: p['activity_name'].strip, src: p['urls']['0'].gsub('-64x17.jpg','-2048x572.jpg').gsub('-48x63.jpg','-1536x2047.jpg').gsub('-48x64.jpg','-1536x2048.jpg').gsub('-64x48.jpg','-2048x1536.jpg').gsub('-64x15.jpg','-2048x504.jpg') ]
+      activities << [ caption: p['activity_name'].strip, src: format_image(p['urls']['0']) ]
     end
     return activities.flatten
+  end
+
+  def format_image(url)
+    puts "url-> #{url}"
+    return url.gsub('-64x17.jpg','-2048x572.jpg')
+    .gsub('-48x63.jpg','-1536x2047.jpg')
+    .gsub('-48x64.jpg','-1536x2048.jpg')
+    .gsub('-64x48.jpg','-2048x1536.jpg')
+    .gsub('-64x15.jpg','-2048x504.jpg') 
+    .gsub('-35x64.jpg','-1150x2048.jpg') 
+    .gsub('-36x64.jpg','-1152x2048.jpg')
+    # https://dgtzuqphqg23d.cloudfront.net/GoR6qj-QRKEujNpJql7mBhQnBTEs22qaDJi0J-bVV_k-48x64.jpg
+    # -1536x2048.jpg
   end
 
 
