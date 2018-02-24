@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def strava_auth
-    query =  { client_id: 23674,
+    query =  {  client_id: 23674,
                 redirect_uri:  'http://localhost:3000/strava/redirect',
                 response_type: 'code',
                 approval_prompt: 'auto',
@@ -37,9 +37,17 @@ class ApplicationController < ActionController::Base
     if !session[:access_token]
       redirect_to root_path and return
     end
+    
+    @ca = get_current_athlete
+    activity_ids = list_athlete_activities.map{|a| a["id"] }
 
-    get_current_athlete(session[:access_token])    
+    @photos = []
+    activity_ids.each do |activity_id|
+      @photos << get_activities_with_photos(activity_id)
+    end
 
+    # @activities = @ca.activities
+    # https://www.strava.com/api/v3/activities/:id/photos?photo_sources=true
   end
 
 end

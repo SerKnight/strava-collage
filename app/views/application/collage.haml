@@ -1,3 +1,37 @@
-your a wizard harry
+#overlay
+  #progstat
+  #progress
 
-= @ca.inspect
+.text-center
+  %h1= "Your a wizard #{@ca['firstname']}"
+  %br
+  #profile-picture
+    = image_tag @ca['profile_medium']
+
+
+
+/ .grid
+
+
+.grid
+  .grid-sizer
+  - @photos.flatten.each_with_index do |p, i|
+    - if i % 4 == 0
+      .grid-item.grid-item--width2
+        %p
+          = image_tag p[:src], :onerror => "this.style.display='none'", class: 'photo'
+          %figcaption= p['caption']
+          
+
+    - else 
+      .grid-item
+        %p
+          = image_tag p[:src], :onerror => "this.style.display='none'", class: 'photo'
+          %figcaption= p['caption']
+  
+  .grid-item
+  .grid-item.grid-item--width2
+
+/ .hidden
+/   %audio{:autoplay => "", :controls => ""}
+/     %source{:src => "metal.mp3", :type => "audio/mpeg"}

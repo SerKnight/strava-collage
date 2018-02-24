@@ -1,2 +1,4 @@
-%a{href: '/strava/auth'} 
-	%img{src: asset_path('connect.png')}
+#lets-go{style: "background-image: url(#{asset_url('login.png')});"}
+#connect-account
+	%a{href: '/strava/auth', id: 'connect-account-btn'}
+		%img{src: asset_path('connect.png')}

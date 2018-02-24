@@ -56,7 +56,7 @@ group :test do
   gem 'launchy'
 end
 
-gem 'strava'
+# gem 'strava'
 # https://github.com/phoffer/strava
 gem 'strava-api-v3'
 gem 'dotenv-rails', groups: [:development, :test]
