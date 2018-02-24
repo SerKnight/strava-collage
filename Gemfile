@@ -59,6 +59,5 @@ end
 # gem 'strava'
 # https://github.com/phoffer/strava
 gem 'strava-api-v3'
-gem 'dotenv-rails', groups: [:development, :test]
 gem 'haml'
 gem 'pry-rails'

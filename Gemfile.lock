@@ -160,14 +160,11 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.0)
       mini_mime (>= 0.1.1)
-    masonry-rails (0.2.4)
-      railties
     method_source (0.9.0)
     mimemagic (0.3.2)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
-    modernizr-rails (2.7.1)
     multi_json (1.13.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
@@ -356,8 +353,6 @@ DEPENDENCIES
   jquery-rails
   launchy
   listen (>= 3.0.5, < 3.2)
-  masonry-rails
-  modernizr-rails
   omniauth
   omniauth-facebook
   omniauth-google-oauth2
