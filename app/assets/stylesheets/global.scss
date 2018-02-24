@@ -7,7 +7,7 @@ $navy: #022A79;
 html {
 	background: $orange;
 	text-align: center; 
-	border: 5px solid $navy;
+	border: 2.5px solid $navy;
 }
 
 #grid {
@@ -16,8 +16,11 @@ html {
 
 body {
 	background: $orange;
-	margin: 50px;
   overflow-x: hidden;
+}
+
+.collage-body {
+	padding: 50px;
 }
 
 a {

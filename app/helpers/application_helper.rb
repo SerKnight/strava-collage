@@ -9,7 +9,7 @@ module ApplicationHelper
       "The only running I hate is running out of money.",
       "Always remember that you are absolutely unique. Just like everyone else.",
       "Friends don't let friends skip leg day.",
-      "I'm into fittness.. Fitness whole dick in my mouth."
+      "I'm into fittness.. Fitness whole pizza in my mouth."
     ].sample
   end
 
@@ -40,7 +40,7 @@ module ApplicationHelper
     .gsub('-35x64.jpg','-1150x2048.jpg') 
     .gsub('-36x64.jpg','-1152x2048.jpg')
     # https://dgtzuqphqg23d.cloudfront.net/GoR6qj-QRKEujNpJql7mBhQnBTEs22qaDJi0J-bVV_k-48x64.jpg
-    # -1536x2048.jpg
+    # -1536x2048.jpg  
   end
 
 
