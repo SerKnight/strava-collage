@@ -10,17 +10,37 @@ html {
 	border: 5px solid $navy;
 }
 
+#grid {
+	background: $orange;
+}
+
 body {
-	margin: 0;
+	background: $orange;
+	margin: 50px;
   overflow-x: hidden;
 }
 
 a {
-	color: $teal;
+	color: $glacier;	
 }
 
 a:hover {
-	color: $glacier;
+	color: $teal;
+}
+
+h1 .title {
+  padding: 20px;
+  padding-top: 40px;
+  font-family: 'Roboto', sans-serif;
+  text-align: right;
+  margin-bottom: 100px;
+  text-align: center;
+  color: #fff;
+  text-shadow: -1px -1px 6px #000;
+}
+
+#logo-icon {
+	background: #FFF;
 }
 
 #lets-go {
@@ -78,10 +98,6 @@ body{
 /* 2 columns */
 .grid-item--width2 { width: 40%; }
 
-
-
-//
-
 *,
 *:before,
 *:after {
@@ -89,9 +105,9 @@ body{
 }
 
 body {
-  background: #ddd;
   overflow-x: hidden;
 }
+
 .gallery {
   @media screen and (min-width: 801px) {
     position: absolute;
@@ -117,19 +133,22 @@ body {
   padding: 10px 10px 10px 10px;
   transition: all 100ms ease-out;
   transform: translateZ(0);
+  padding-bottom: 25px;
+
   img {
     width: 100%;
     height: auto;
     position: relative;    
   }
-  figcaption {
+
+  .caption {
     margin-top: 10px;
-    font-family: 'Indie Flower', cursive;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     text-align:center;    
     line-height: 1;
     color: black;
+    font-family: 'Roboto', sans-serif;
   }
   
   @media screen and (max-width: 400px) {
@@ -140,7 +159,7 @@ body {
   
   @media screen and (min-width: 401px) {
     &:hover {
-      transform: rotateZ(0deg) scale(1.2) !important;
+      transform: rotateZ(0deg) scale(1.025) !important;
       z-index: 257 !important;
       box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.1),
                   0px 0px 29px rgba(0, 0, 0, 0.2);
@@ -148,3 +167,16 @@ body {
   }
 }
   
+
+.download-button {
+	position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 40px;
+  border-radius: 50%;
+
+  &:hover {
+  	border: 1px solid rgba(0,0,0,0.1);
+  	opacity: 0.85;
+  }
+}

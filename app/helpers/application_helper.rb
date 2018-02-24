@@ -1,5 +1,18 @@
 module ApplicationHelper
 
+  def sample_quotes
+    return [
+      "People say nothing is impossible, but I do nothing all the time.",
+      "Failure is the condiment that gives success its flavor.",
+      "Huscle for that Muscle",
+      "I want a hot body, but I also want tacos.",
+      "The only running I hate is running out of money.",
+      "Always remember that you are absolutely unique. Just like everyone else.",
+      "Friends don't let friends skip leg day.",
+      "I'm into fittness.. Fitness whole dick in my mouth."
+    ].sample
+  end
+
   def get_current_athlete
     uri = URI.parse("https://www.strava.com/api/v3/athlete?access_token=#{session[:access_token]}")
     response = Net::HTTP.get_response(uri)

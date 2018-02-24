@@ -37,6 +37,8 @@ class ApplicationController < ActionController::Base
     if !session[:access_token]
       redirect_to root_path and return
     end
+
+    @quote = sample_quotes
     
     @ca = get_current_athlete
     activity_ids = list_athlete_activities.map{|a| a["id"] }

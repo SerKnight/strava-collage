@@ -3,31 +3,28 @@
   #progress
 
 .text-center
-  %h1= "Your a wizard #{@ca['firstname']}"
-  %br
-  #profile-picture
-    = image_tag @ca['profile_medium']
-
-
-
-/ .grid
-
+  = image_tag 'strava_logo_white.png', id: 'logo-logo'
+  = image_tag 'strava_symbol_orange.png', id: 'logo-icon'
+  %h1
+    .title= @quote
 
 .grid
   .grid-sizer
   - @photos.flatten.each_with_index do |p, i|
     - if i % 4 == 0
       .grid-item.grid-item--width2
-        %p
-          = image_tag p[:src], :onerror => "this.style.display='none'", class: 'photo'
-          %figcaption= p['caption']
-          
+        .photo
+          %img{src: p[:src], :onerror => "this.style.display='none'"}
+            %a{href: p[:src], download: p[:caption].gsub!(/[^0-9A-Za-z]/, ''), class: "download-button" }= image_tag 'download.png'
+          .caption=  p[:caption]
+        
 
     - else 
       .grid-item
-        %p
-          = image_tag p[:src], :onerror => "this.style.display='none'", class: 'photo'
-          %figcaption= p['caption']
+        .photo
+          %img{src: p[:src], :onerror => "this.style.display='none'"}
+            %a{href: p[:src], download: p[:caption].gsub!(/[^0-9A-Za-z]/, ''), class: "download-button" }= image_tag 'download.png'
+          .caption=  p[:caption]
   
   .grid-item
   .grid-item.grid-item--width2
@@ -35,3 +32,8 @@
 / .hidden
 /   %audio{:autoplay => "", :controls => ""}
 /     %source{:src => "metal.mp3", :type => "audio/mpeg"}
+
+
+
+/ #profile-picture
+/   = image_tag @ca['profile_medium']
