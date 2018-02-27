@@ -1,0 +1,39 @@
+.text-center
+  = image_tag 'strava_logo_white.png', id: 'logo-logo'
+  = image_tag 'strava_symbol_orange.png', id: 'logo-icon'
+  %h1
+    .title= @quote
+
+.grid
+  .grid-sizer
+  - animals = [asset_path('aw1.jpg'), asset_path('aw2.jpg'), asset_path('aw3.jpg'), asset_path('aw4.jpg'), asset_path('aw5.jpg'),asset_path('aw6.jpg'),asset_path('aw7.jpg'),asset_path('aw8.jpg'),asset_path('aw9.jpg'),asset_path('aw10.jpg')] # for my broken imgs :(
+
+  - @activities.each_with_index do |activity, i|
+    - animal = animals.sample
+    - activity["photos"].each do |photo|
+      - if i % 4 == 0
+        .grid-item.grid-item--width2
+          = render partial: 'photo', locals: {activity: activity, photo: photo, animal: animal}
+      - else 
+        .grid-item
+          = render partial: 'photo', locals: {activity: activity, photo: photo, animal: animal}
+
+  
+
+/ .hidden
+/   %audio{:autoplay => "", :controls => ""}
+/     %source{:src => "metal.mp3", :type => "audio/mpeg"}
+
+
+#profile-picture-wrapper
+  = image_tag @ca['profile_medium']
+  .twitter-share
+    %a.twitter-hashtag-button{:href => "https://twitter.com/intent/tweet?button_hashtag=GamifyYourExercise&hashtags=GamifyYourExercise&text=https%3A%2F%2Fstrava-collage.herokuapp.com%2F"}
+      = "#GamifyYourExercise"
+  
+  %hr
+  %p 
+    Made By
+    %a{href: 'http://www.serknight.com/', target: '_blank'} SerKnight
+
+

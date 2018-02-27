@@ -11,24 +11,17 @@
 .grid
   .grid-sizer
   - animals = [asset_path('aw1.jpg'), asset_path('aw2.jpg'), asset_path('aw3.jpg'), asset_path('aw4.jpg'), asset_path('aw5.jpg'),asset_path('aw6.jpg'),asset_path('aw7.jpg'),asset_path('aw8.jpg'),asset_path('aw9.jpg'),asset_path('aw10.jpg')]
-  - @photos.flatten.each_with_index do |p, i|
-    - animal = animals.sample
-    - if i % 4 == 0
-      .grid-item.grid-item--width2
-        .photo
-          %img{src: p[:src], :onerror => "this.onerror=null;this.src='#{animal}';"}
-          .caption=  p[:caption]
-        
 
-    - else 
-      .grid-item
-        .photo
-          %img{src: p[:src], :onerror => "this.onerror=null;this.src='#{animal}';"}
-          .caption=  p[:caption]
+  - @activities.each_with_index do |activity, i|
+    - animal_src = animals.sample
+    - activity["photos"].each do |photo|
+      - if i % 3 == 0
+        .grid-item.grid-item--width2
+          = render partial 'photo', locals: {activity: activity, photo: photo, animal: animal_src }
+      - else 
+        .grid-item
+          = render partial 'photo', locals: {activity: activity, photo: photo, animal: animal_src }
   
-  .grid-item
-  .grid-item.grid-item--width2
-
 / .hidden
 /   %audio{:autoplay => "", :controls => ""}
 /     %source{:src => "metal.mp3", :type => "audio/mpeg"}

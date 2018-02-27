@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'application#start' 
+  root 'activities#start' 
+  
   get '/strava/auth' => 'application#strava_auth'
   get '/strava/redirect' => 'application#strava_auth_redirect'
   
-  get '/collage' => 'application#collage'
+  get '/collage' => 'activities#collage'
 end
 

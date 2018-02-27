@@ -1,9 +1,7 @@
 document.addEventListener("turbolinks:load", function() {
- 	// init Masonry
  	var $grid = $('.grid').masonry({
  	  // options...
  	});
- 	// layout Masonry after each image loads
  	$grid.imagesLoaded().progress( function() {
  	  $grid.masonry('layout');
  	});
@@ -15,7 +13,9 @@ document.addEventListener("turbolinks:load", function() {
 	  $(this).css({
 	    'transform' : 'rotateZ(' + rotation + 'deg)',
 	    'z-index' : depth
-	  });        
+	  });
 	});
+
+	document.getElementById('twitter-url').href = "https://twitter.com/intent/tweet?text=#GamifyYourExercise%20#strava " + document.URL
 
 });

@@ -11,7 +11,26 @@
     %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.1/masonry.pkgd.min.js"}
     %link{:href => "https://fonts.googleapis.com/css?family=Roboto", :rel => "stylesheet"}/
 
+    :javascript
+      window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+          t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      
+        t._e = [];
+        t.ready = function(f) {
+          t._e.push(f);
+        };
+      
+        return t;
+      }(document, "script", "twitter-wjs"));
 
-  %body{class: "#{action_name == 'collage' ? 'collage-body' : ''}"}
+
+  %body#target{class: "#{action_name == 'collage' ? 'collage-body' : ''}"}
     = yield
     
+

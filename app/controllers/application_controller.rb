@@ -1,12 +1,5 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  include ApplicationHelper
-
-  def start
-    if session[:access_token]
-      redirect_to '/collage'
-    end
-  end
 
   def strava_auth
     query =  {  client_id: 23674,
@@ -31,21 +24,4 @@ class ApplicationController < ActionController::Base
 
     redirect_to collage_path
   end
-
-
-  def collage
-    if !session[:access_token]
-      redirect_to root_path and return
-    end
-
-    @quote = sample_quotes
-    @ca = get_current_athlete
-    @photos = []
-    
-    activity_ids = list_athlete_activities.map{|a| a["id"] }
-    activity_ids.each do |activity_id|
-      @photos << get_activities_with_photos(activity_id)
-    end
-  end
-
 end

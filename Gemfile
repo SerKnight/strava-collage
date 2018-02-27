@@ -56,8 +56,6 @@ group :test do
   gem 'launchy'
 end
 
-# gem 'strava'
-# https://github.com/phoffer/strava
-gem 'strava-api-v3'
+
 gem 'haml'
 gem 'pry-rails'

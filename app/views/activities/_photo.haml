@@ -1,0 +1,24 @@
+.photo
+  %img{src: photo, :onerror => "this.onerror=null;this.src='#{animal}';", class: 'main-img'}
+
+  .caption
+    = activity['activity_name']
+  - if activity['kudos_count'].to_i > 0 
+    .kudos
+      = "#{activity['kudos_count']} Kudos!"
+
+  .activity-data
+    .item
+      = image_tag asset_path('strava-bullet.png'), class: 'strava-bullet'
+      .copy
+        = "<span>Distance: </span>#{display_distance(activity['distance'])}".html_safe    
+    .item
+      = image_tag asset_path('strava-bullet.png'), class: 'strava-bullet'
+      .copy
+        = "<span>Activity Type:</span> #{activity['activity_type']}".html_safe
+      
+    .item
+      = image_tag asset_path('strava-bullet.png'), class: 'strava-bullet'
+      .copy
+        = "<span>Moving Time:</span> #{display_moving_time(activity['moving_time'])}".html_safe
+      
