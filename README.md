@@ -31,11 +31,15 @@ TODO:
 	- looked through a few libraries for clue of integer to distance storage..
 	- ended up taking a few ratios from float -> miles via my personal data.
 	- averages to about 1/1610, so using that ratio do display mileage for each card
-	>	42704.8	/ 26.53	=> 1609.679
-	>	19388.7	/ 12.04 => 1610.357143
-	>	10266.8	/ 6.38 => 1609.21
-	>	9232.8	/ 5.73 => 1611.3
+```
+	42704.8	/ 26.53	=> 1609.679
+	19388.7	/ 12.04 => 1610.357143
+	10266.8	/ 6.38 => 1609.21
+	9232.8	/ 5.73 => 1611.3
+```
+
 **I did end up finding that distance is defined as being stored in Meters for a lot of the other Objects in the API, hence ( 1609.34 in one mile haha..)**
 
 * Include documentation on moving_time Unit size & Data storage
+
 **Also found elapsed_time integer	is 'The <object> Lap's elapsed time, in seconds**
