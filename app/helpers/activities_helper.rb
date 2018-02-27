@@ -1,4 +1,5 @@
 module ActivitiesHelper
+  require 'net/http'
 
   def display_distance(distance)
     return "#{(distance / 1610).to_i} Miles"
