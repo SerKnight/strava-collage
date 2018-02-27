@@ -1,4 +1,4 @@
-Strava Collage -
+Strava Collage - https://github.com/SerKnight/strava-collage
 
 A simple app to start exploring the Strava API. A fun way to showcases your recent activities photos in an interactive collage that shows how fun it is to #GamifyYourExercise
 
