@@ -196,7 +196,8 @@ GEM
     pry-rails (0.3.5)
       pry (>= 0.9.10)
     public_suffix (3.0.2)
-    puma (3.11.2)
+    puma (4.3.9)
+      nio4r (~> 2.0)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (2.0.4)
@@ -349,7 +350,7 @@ DEPENDENCIES
   omniauth-linkedin-oauth2
   pg
   pry-rails
-  puma (~> 3.7)
+  puma (~> 4.3)
   pundit
   rails (~> 5.1.1)
   rails_admin
